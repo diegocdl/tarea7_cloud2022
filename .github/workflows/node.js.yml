@@ -38,8 +38,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: demo-${{ $GITHUB_SHA }}
-        release_name: demo-${{ $GITHUB_SHA }}
+        tag_name: demo-${{ env.GITHUB_SHA }}
+        release_name: demo-${{ env.GITHUB_SHA }}
         draft: true
         prerelease: false
 
