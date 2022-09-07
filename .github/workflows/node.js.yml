@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }} to build and test
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
@@ -31,7 +31,7 @@ jobs:
     - run: npm test
     
     - name: Compress Files
-    - run: cd dist/tarea7_cloud2022 && zip -r build.zip . && cd ../..
+      run: cd dist/tarea7_cloud2022 && zip -r build.zip . && cd ../..
     
     - name: Create Draft Release
       id: create_release
